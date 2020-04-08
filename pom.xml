@@ -1,20 +1,21 @@
-<build>
+<project>
+  ...
+  <build>
     <plugins>
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-war-plugin</artifactId>
-            <configuration>
-                <webResources>
-                    <resource>
-                        <directory>src/main/filteredWebapp</directory>
-                        <filtering>true</filtering>
-                    </resource>
-                    <resource>
-                        <directory>src/main/webapp</directory>
-                        <filtering>false</filtering>
-                    </resource>
-                </webResources>
-            </configuration>
-        </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.2.3</version>
+        <configuration>
+          <webResources>
+            <resource>
+              <!-- this is relative to the pom.xml directory -->
+              <directory>resource2</directory>
+            </resource>
+          </webResources>
+        </configuration>
+      </plugin>
     </plugins>
-</build>
+  </build>
+  ...
+</project>
